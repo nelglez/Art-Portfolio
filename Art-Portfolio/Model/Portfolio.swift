@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Portfolio: Codable {
-    let users: [User]
-}
+//struct Portfolio: Codable {
+ //   let users: Users
+//}

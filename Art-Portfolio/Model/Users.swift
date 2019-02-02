@@ -8,33 +8,22 @@
 
 import Foundation
 
-struct User: Equatable, Codable {
-    static func == (lhs: User, rhs: User) -> Bool {
-        return lhs.uid == rhs.uid
-    }
-    
-    var uid: String
+struct Users: Codable {
+   
+    var uid: Int
     var email: String
-    var password: String
     var userName: String
     let posts: Post
     
-//    init(uid: String = UUID().uuidString, email: String, password: String, userName: String, posts: Post) {
-//        self.uid = uid
-//        self.email = email
-//        self.password = password
-//        self.userName = userName
-//    }
-    
     enum CodingKeys: String, CodingKey {
-        case uid, email, password, posts
+        case uid, email, posts
         case userName = "username"
     }
-    
+   
 }
 
 struct Post: Codable {
-    let postId: String
+    let postId: Int
     let postDescription: String
     let imageUrl: String
     let date: String
@@ -42,9 +31,12 @@ struct Post: Codable {
     
     
     enum CodingKeys: String, CodingKey {
-        case date, likes
+        case date
         case postId = "postid"
         case postDescription = "description"
         case imageUrl = "image_url"
+        case likes = "Likes"
     }
 }
+
+
